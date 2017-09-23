@@ -48,7 +48,5 @@ describe('Spotify', function(){
                 assert.deepEqual(this.spotify.displayAllAlbums('Kodaline'), ['In a perfect world','Random Album']);
             });
         });
-
-        // it('Should properly add songs to the specific singer')
 });
 
