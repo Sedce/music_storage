@@ -15,6 +15,6 @@ Tools/Language Used:
   - Chai JS
   
 Made by:
-  Cedez Marie Gulane<br>
+  <br>Cedez Marie Gulane<br>
   Charlito Piao<br>
   Mary Rose Ampoon
