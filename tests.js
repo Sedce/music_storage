@@ -1,5 +1,15 @@
+//User configurable property, influences whether stack trace is included in Assertion error message. 
+//Default of false suppresses stack trace in the error message. 
+//chai. config. includeStack = true; // turn on stack trace.
+
 chai.config.includeStack = false;
+
+//User configurable property, sets length threshold for actual and expected values in assertion errors. 
+//If this threshold is exceeded, the value is truncated.
+//Set it to zero if you want to disable truncating altogether.
 chai.config.truncateThreshold = 0;
+
+//Assertion, check equality of expected result to actual result
 var assert = chai.assert;
 
 describe('Spotify', function(){

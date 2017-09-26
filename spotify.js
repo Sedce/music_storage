@@ -3,7 +3,6 @@ function Spotify()
 	var list_of_singers = [];
 	this.length = 0;
 
-	/*-------------------ENTITIES----------------------------*/
 	//Singer Entity
 	var singer = function(name, description,){
 		var arr = []
@@ -33,7 +32,6 @@ function Spotify()
 		}
 	}
 
-	/*-------------------ADDING METHODS----------------------*/	
 	//Add Singer
 	this.addSinger = function (name, description){
 		var artist = new singer(name,description);
@@ -57,7 +55,6 @@ function Spotify()
 		list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs.length += 1;
 	};
 
-	/*----------------------GET METHODS----------------------*/	
 	//Get Singer
 	this.getSinger = function(singer){
 		//finds the singer in the array and returns the singer;
