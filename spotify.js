@@ -98,8 +98,7 @@ function Spotify()
 		}
 		return -1; //if not existing
 	}
-	
-	/*------------------------DISPLAY METHODS----------------------*/		
+		
 	//Display All Albums
 	this.displayAllAlbums = function(singer){
 		albumss = list_of_singers[this.getSinger(singer)].albums;
