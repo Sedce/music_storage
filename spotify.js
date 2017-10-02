@@ -62,8 +62,8 @@ function Spotify()
 		return -1;
 	}
 	
-	this.getAlbum = function(name, album_name){
-		var artist = list_of_singers[this.getSinger(name)];
+	this.getAlbum = function(singer_name, album_name){
+		var artist = list_of_singers[this.getSinger(singer_name)];
 
 		for (var i = 0; i <= artist.albums.length; i++) {
 			if(artist.albums[i].title == album_name){
@@ -73,8 +73,8 @@ function Spotify()
 		return -1;
 	}
 
-	this.getSong = function(song_title, album_name, name){
-		var artist = list_of_singers[this.getSinger(name)];
+	this.getSong = function(song_title, album_name, singer_name){
+		var artist = list_of_singers[this.getSinger(singer_name)];
 
 		for (var i = 0; i <= artist.albums.length; i++) {
 
@@ -92,26 +92,26 @@ function Spotify()
 		return -1; //if not existing
 	}
 		
-	this.displayAllAlbums = function(singer){
-		list_albums = list_of_singers[this.getSinger(singer)].albums;
+	this.displayAllAlbums = function(singer_name){
+		list_albums = list_of_singers[this.getSinger(singer_name)].albums;
 		albums = [];
 		list_albums.length -= 1;
 
 		for (var i = 0; i < list_albums.length; i++) {
-			albums[i] = list_of_singers[this.getSinger(singer)].albums[i].title;
+			albums[i] = list_of_singers[this.getSinger(singer_name)].albums[i].title;
 		}
 
 		return albums;
 	}
 
-	this.displayAllSongs = function(singer,album){
-		list_songs = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album)].songs;
+	this.displayAllSongs = function(singer_name,album){
+		list_songs = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer_name,album)].songs;
 		songs = [];
 
 		list_songs.length -= 1;
 
 		for (var i = 0; i < list_songs.length; i++) {
-			songs[i] = list_of_singers[this.getSinger(singer)].albums[i].songs[i].title;
+			songs[i] = list_of_singers[this.getSinger(singer_name)].albums[i].songs[i].title;
 		}
 
 		return songs;
