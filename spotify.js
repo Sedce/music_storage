@@ -1,6 +1,9 @@
 //1. Renamed functions and variables
 //2. Deleted useless code
 //3. Remove debugging and logging statements
+//4. A Routine is too long
+//5 A loop is too long or too deeply nested
+//6. A routine has a poor name
 function Spotify()
 {
 	//renamed Array
