@@ -98,20 +98,20 @@ function Spotify()
 		list_albums.length -= 1;
 
 		for (var i = 0; i < list_albums.length; i++) {
-			albums[i] = list_of_singers[this.getSinger(singer_name)].albums[i].title;
+			albums[i] = list_albums[i].title;
 		}
 
 		return albums;
 	}
 
 	this.displayAllSongs = function(singer_name,album){
-		list_songs = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer_name,album)].songs;
+		list_songs = list_of_singers[this.getSinger(singer_name)].albums[this.getAlbum(singer_name,album)].songs;
 		songs = [];
 
 		list_songs.length -= 1;
 
 		for (var i = 0; i < list_songs.length; i++) {
-			songs[i] = list_of_singers[this.getSinger(singer_name)].albums[i].songs[i].title;
+			songs[i] = list_songs[i].title;
 		}
 
 		return songs;
