@@ -1,28 +1,18 @@
-//User configurable property, influences whether stack trace is included in Assertion error message. 
-//Default of false suppresses stack trace in the error message. 
-//chai. config. includeStack = true; // turn on stack trace.
-
 chai.config.includeStack = false;
-
-//User configurable property, sets length threshold for actual and expected values in assertion errors. 
-//If this threshold is exceeded, the value is truncated.
-//Set it to zero if you want to disable truncating altogether.
 chai.config.truncateThreshold = 0;
-
-//Assertion, check equality of expected result to actual result
 var assert = chai.assert;
 
 describe('Spotify', function(){
-    describe('Add_Singer(value,value)', function(){
+    describe('addArtist(value,value)', function(){
         beforeEach(function(){
             this.spotify = new Spotify();
         });
-        it('Should add singers to the list of singers', function(){
-            this.spotify.addSinger('Lany','Mga lami nga lalaki');
+        it('Should add Artists to the list of Artists', function(){
+            this.spotify.addArtist('Lany','Great great great');
             assert.equal(this.spotify.length, 1);
-            this.spotify.addSinger('Missing Filemon','Daddehs');
+            this.spotify.addArtist('Missing Filemon','Bisrock');
             assert.equal(this.spotify.length, 2);
-            this.spotify.addSinger('Taylor Swift','PLAYING VICTIM');
+            this.spotify.addArtist('Taylor Swift','PLAYING VICTIM');
             assert.equal(this.spotify.length, 3);
         });
     });
@@ -30,10 +20,10 @@ describe('Spotify', function(){
     describe('Add_Album(value,value,value)', function(){
         beforeEach(function(){
             this.spotify = new Spotify();
-            this.spotify.addSinger('Lany','Mga lami nga lalaki');
-            this.spotify.addSinger('Kodaline','Mga maoy na lalaki');
+            this.spotify.addArtist('Lany','hahaha');
+            this.spotify.addArtist('Kodaline','Very amazing band');
         });
-        it('Should add an album to the singer', function(){
+        it('Should add an album to the artist', function(){
             this.spotify.addAlbum('Kodaline','In a perfect world', 'Sad album');
             assert.deepEqual(this.spotify.displayAllAlbums('Kodaline'), ['In a perfect world']);
             this.spotify.addAlbum('Kodaline','Random Album', 'Random Album');
@@ -46,7 +36,7 @@ describe('Spotify', function(){
     describe('Add_Song(value,value,value)', function(){
         beforeEach(function(){
             this.spotify = new Spotify();
-            this.spotify.addSinger('Chigga','Black Indian Chinese');
+            this.spotify.addArtist('Chigga','Black Indian Chinese');
             this.spotify.addAlbum('Chigga','Album Chigga', 'Race Descipriton Album');
         });
         it('Should add a song in the album', function(){
