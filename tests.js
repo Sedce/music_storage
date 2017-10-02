@@ -1,7 +1,6 @@
 //User configurable property, influences whether stack trace is included in Assertion error message. 
 //Default of false suppresses stack trace in the error message. 
 //chai. config. includeStack = true; // turn on stack trace.
-
 chai.config.includeStack = false;
 
 //User configurable property, sets length threshold for actual and expected values in assertion errors. 
