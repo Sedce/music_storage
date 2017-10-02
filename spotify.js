@@ -32,14 +32,12 @@ function Spotify()
 		}
 	}
 
-	//Add Singer
 	this.addSinger = function (name, description){
 		var new_artist = new singer(name,description);
 		list_of_singers[this.length] = new_artist;
 		this.length += 1;
 	};
 
-	//Add Album
 	this.addAlbum = function (singer,album_title,album_description){
 		var new_album = new album(album_title,album_description);
 		album_length = list_of_singers[this.getSinger(singer)].albums.length;
@@ -47,7 +45,6 @@ function Spotify()
 		list_of_singers[this.getSinger(singer)].albums.length += 1;
 	};
 	
-	//Add Song
 	this.addSong = function (song_title, album_title, singer){
 		var new_song = new song(song_title);
 		songs_length = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs.length;
@@ -55,7 +52,6 @@ function Spotify()
 		list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs.length += 1;
 	};
 
-	//Get Singer
 	this.getSinger = function(name){
 		//finds the singer in the array and returns the singer;
 		for (var i  = 0; i < list_of_singers.length; i++) {
@@ -66,7 +62,6 @@ function Spotify()
 		return -1;
 	}
 	
-	//Get Album
 	this.getAlbum = function(name, album_name){
 		var artist = list_of_singers[this.getSinger(name)];
 
@@ -78,11 +73,9 @@ function Spotify()
 		return -1;
 	}
 
-	//Get Song
 	this.getSong = function(song_title, album_name, name){
 		var artist = list_of_singers[this.getSinger(name)];
 
-		//Loop inside the singer's album
 		for (var i = 0; i <= artist.albums.length; i++) {
 
 			//Check if album we are looking for is in the singer's album
@@ -99,7 +92,6 @@ function Spotify()
 		return -1; //if not existing
 	}
 		
-	//Display All Albums
 	this.displayAllAlbums = function(singer){
 		list_albums = list_of_singers[this.getSinger(singer)].albums;
 		albums = [];
@@ -112,7 +104,6 @@ function Spotify()
 		return albums;
 	}
 
-	//Display All Songs
 	this.displayAllSongs = function(singer,album){
 		list_songs = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album)].songs;
 		songs = [];
