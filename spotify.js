@@ -1,13 +1,9 @@
-//1. Renamed functions and variables
-//2. Deleted useless code
-//3. Remove debugging and logging statements
 function Spotify()
 {
-	//renamed Array
+	//Renamed Array
 	var list_of_artists = [];
 	this.length = 0;
 
-	/*-------------------ENTITIES----------------------------*/
 	//Arist Entity
 	var artist = function(name, description){
 		var albums = []
@@ -22,7 +18,7 @@ function Spotify()
 	var album = function(title,desciption)
 	{
 		this.song_count = 0;
-		songs_list = [];
+		song_list = [];
 		return {
 			title:title,
 			songs:song_list
@@ -37,24 +33,19 @@ function Spotify()
 		}
 	}
 
-	/*-------------------ADDING METHODS----------------------*/	
-	//Add Singer
-	//renamed Singer to Artist
 	this.addArtist = function (name, description){
 		var _artist = new artist(name,description);
 		list_of_artists[this.length] = _artist;
 		this.length += 1;
 	};
 
-	//Add Album
 	this.addAlbum = function (singer,album_title,album_description){
 		var alb = new album(album_title,album_description);
 		alb_len = this.getArtist(singer).albums.length;
 		this.getArtist(singer).albums[alb_len] = alb;
 		this.getArtist(singer).albums.length += 1;
 	};
-	
-	//Add Song
+
 	this.addSong = function (song_title, album_title, artist){
 		var s = new song(song_title);
 		songs_len = this.getAlbum(artist,album_title).songs.length;
@@ -62,9 +53,6 @@ function Spotify()
 		this.getAlbum(artist,album_title).songs.length += 1;
 	};
 
-	/*----------------------GET METHODS----------------------*/	
-	//Get Singer
-	//Changed to GetArtist
 	//Instead of sending the index in the array of singers it sends the Artist entity instead
 	this.getArtist = function(singer){
 		//finds the singer in the array and returns the singer;
@@ -76,7 +64,6 @@ function Spotify()
 		return -1;
 	}
 	
-	//Get Album
 	//Return the Album entity instead of the index
 	this.getAlbum = function(artists, album_name){
 		artist = this.getArtist(artists);
@@ -89,7 +76,6 @@ function Spotify()
 		return -1;
 	}
 
-	//Get Song
 	this.getSong = function(song_title, album_name, artists){
 		artist = this.getArtist(artists);
 
@@ -110,32 +96,28 @@ function Spotify()
 		return -1; //if not existing
 	}
 	
-	/*------------------------DISPLAY METHODS----------------------*/		
-	//Display All Albums
 	this.displayAllAlbums = function(artist){
-		albumss = this.getArtist(artist).albums;
+		list_of_albums = this.getArtist(artist).albums;
 		album_array= [];
-		albumss.length -= 1;
-		//changed from this
-		// for (var i = 0; i < albumss.length; i++) {
-		// 		arr[i] = albumss[i].title;
-		// }
-		//to this
+		list_of_albums.length -= 1;
+		
+		//Change complex algorithms to much simpler and understandable algorithms
 		function checkAndInclude(album, index){
-		album_array[index] = album.title;
+			album_array[index] = album.title;
 		};
-		albumss.forEach(checkAndInclude);
+
+		list_of_albums.forEach(checkAndInclude);
+
 		return album_array;
 	}
 
-	//Display All Songs
 	this.displayAllSongs = function(artist,album){
 		list_of_songs = this.getAlbum(artist,album).songs;
 		array_of_songs = [];
 		list_of_songs.length -=1;
 
 		function checkAndInclude(song, index){
-		array_of_songs[index] = song.title;
+			array_of_songs[index] = song.title;
 		};
 		list_of_songs.forEach(checkAndInclude);
 
