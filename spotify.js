@@ -22,10 +22,10 @@ function Spotify()
 	var album = function(title,desciption)
 	{
 		this.song_count = 0;
-		arr = [];
+		songs_list = [];
 		return {
 			title:title,
-			songs:arr
+			songs:song_list
 		}	
 	}
 
