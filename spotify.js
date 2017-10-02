@@ -5,11 +5,11 @@ function Spotify()
 
 	//Singer Entity
 	var singer = function(name, description,){
-		var arr = []
+		var album_list = []
 		return { 
 			name:name, 
 			description:description,
-			albums:arr
+			albums:album_list
 		}
 	}
 
@@ -17,10 +17,10 @@ function Spotify()
 	var album = function(title,desciption)
 	{
 		this.song_count = 0;
-		arr = [];
+		var song_list = [];
 		return {
 			title:title,
-			songs:arr
+			songs:song_list
 		}	
 	}
 
@@ -34,32 +34,32 @@ function Spotify()
 
 	//Add Singer
 	this.addSinger = function (name, description){
-		var artist = new singer(name,description);
-		list_of_singers[this.length] = artist;
+		var new_artist = new singer(name,description);
+		list_of_singers[this.length] = new_artist;
 		this.length += 1;
 	};
 
 	//Add Album
 	this.addAlbum = function (singer,album_title,album_description){
-		var alb = new album(album_title,album_description);
-		alb_len = list_of_singers[this.getSinger(singer)].albums.length;
-		list_of_singers[this.getSinger(singer)].albums[alb_len] = alb;
+		var new_album = new album(album_title,album_description);
+		album_length = list_of_singers[this.getSinger(singer)].albums.length;
+		list_of_singers[this.getSinger(singer)].albums[album_length] = new_album;
 		list_of_singers[this.getSinger(singer)].albums.length += 1;
 	};
 	
 	//Add Song
 	this.addSong = function (song_title, album_title, singer){
-		var s = new song(song_title);
-		songs_len = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs.length;
-		list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs[songs_len] = s;
+		var new_song = new song(song_title);
+		songs_length = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs.length;
+		list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs[songs_length] = new_song;
 		list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album_title)].songs.length += 1;
 	};
 
 	//Get Singer
-	this.getSinger = function(singer){
+	this.getSinger = function(name){
 		//finds the singer in the array and returns the singer;
 		for (var i  = 0; i < list_of_singers.length; i++) {
-			if(list_of_singers[i].name == singer){
+			if(list_of_singers[i].name == name){
 				return i;
 			}
 		}
@@ -67,8 +67,8 @@ function Spotify()
 	}
 	
 	//Get Album
-	this.getAlbum = function(singer, album_name){
-		artist = list_of_singers[this.getSinger(singer)];
+	this.getAlbum = function(name, album_name){
+		var artist = list_of_singers[this.getSinger(name)];
 
 		for (var i = 0; i <= artist.albums.length; i++) {
 			if(artist.albums[i].title == album_name){
@@ -79,8 +79,8 @@ function Spotify()
 	}
 
 	//Get Song
-	this.getSong = function(song_title, album_name, singer){
-		artist = list_of_singers[this.getSinger(singer)];
+	this.getSong = function(song_title, album_name, name){
+		var artist = list_of_singers[this.getSinger(name)];
 
 		//Loop inside the singer's album
 		for (var i = 0; i <= artist.albums.length; i++) {
@@ -101,28 +101,28 @@ function Spotify()
 		
 	//Display All Albums
 	this.displayAllAlbums = function(singer){
-		albumss = list_of_singers[this.getSinger(singer)].albums;
-		arr = [];
-		albumss.length -= 1;
+		list_albums = list_of_singers[this.getSinger(singer)].albums;
+		albums = [];
+		list_albums.length -= 1;
 
-		for (var i = 0; i < albumss.length; i++) {
-				arr[i] = list_of_singers[this.getSinger(singer)].albums[i].title;
+		for (var i = 0; i < list_albums.length; i++) {
+			albums[i] = list_of_singers[this.getSinger(singer)].albums[i].title;
 		}
 
-		return arr;
+		return albums;
 	}
 
 	//Display All Songs
 	this.displayAllSongs = function(singer,album){
 		list_songs = list_of_singers[this.getSinger(singer)].albums[this.getAlbum(singer,album)].songs;
-		arr = [];
+		songs = [];
 
 		list_songs.length -= 1;
 
 		for (var i = 0; i < list_songs.length; i++) {
-			arr[i] = list_of_singers[this.getSinger(singer)].albums[i].songs[i].title;
+			songs[i] = list_of_singers[this.getSinger(singer)].albums[i].songs[i].title;
 		}
 
-		return arr;
+		return songs;
 	}
 }
