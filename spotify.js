@@ -6,12 +6,12 @@ function Spotify()
 
 	//Arist Entity
 	var artist = function(name, description){
-		var albums = []
+		var albums = [];
 		return { 
 			name:name, 
 			description:description,
 			albums:albums
-		}
+		};
 	}
 
 	//Album Entity	
@@ -22,7 +22,7 @@ function Spotify()
 		return {
 			title:title,
 			songs:song_list
-		}	
+		};
 	}
 
 	//Song Entity
@@ -30,7 +30,7 @@ function Spotify()
 	{
 		return {
 			title:title
-		}
+		};
 	}
 
 	this.addArtist = function (name, description){
