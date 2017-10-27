@@ -1,0 +1,28 @@
+{
+  "name": "music_storage",
+  "version": "1.0.0",
+  "description": "Music storage application",
+  "main": "spotify.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sedce/music_storage.git"
+  },
+  "keywords": [
+    "music"
+  ],
+  "author": "bisdaC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sedce/music_storage/issues"
+  },
+  "homepage": "https://github.com/Sedce/music_storage#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
