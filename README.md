@@ -19,10 +19,11 @@ Tools/Language Used:
   - Chai JS
   - Nodejs
   - Express
-
-Made by:
-  <br>Cedez Marie Gulane<br>
-  Charlito Piao<br>
-  Mary Rose Ampoon
+  - Bootstrap Simplify Template
 
 Images from: pexels.com
+
+Made by:
+  - Cedez Marie Gulane
+  - Charlito Piao
+  - Mary Rose Ampoon
