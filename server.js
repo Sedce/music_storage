@@ -4,7 +4,14 @@ var app = express();
 
 app.set('views', './templates');
 app.engine('html', consolidate.nunjucks);
-app.use(express.static('./assets/css'))
+
+app.use(express.static('./assets'));
+app.use(express.static('./images'));
+app.use(express.static('./lib'));
+app.use(express.static('./templates'));
+app.use(express.static('./main'));
+
+
 app.get('/', function(request, response){
   response.render('index.html');
 });

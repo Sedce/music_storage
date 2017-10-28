@@ -1,7 +1,7 @@
 # Spotyfi Music Library
 
 Description:
-  A requirement for CMSC 166. A music library that lets you add a singer/artist. 
+  A requirement for CMSC 166. A music library that lets you add a singer/artist.
   <br>An artist can add an album and inside those album are songs of singer/artist.
 
 What it does:
@@ -13,8 +13,10 @@ Tools/Language Used:
   - Javascript
   - Mocha JS
   - Chai JS
-  
+
 Made by:
   <br>Cedez Marie Gulane<br>
   Charlito Piao<br>
   Mary Rose Ampoon
+
+Images from: pexels.com
