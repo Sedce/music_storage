@@ -1,8 +1,9 @@
 # Spotyfi Music Library
 
 How to run (for now):
-  1. Open Terminal <br>
-  2. Type: node server.js
+  1. Install nodejs and express<br>
+  2. Open Terminal <br>
+  3. Type: node server.js
 
 Description:
   A requirement for CMSC 166. A music library that lets you add a singer/artist.
