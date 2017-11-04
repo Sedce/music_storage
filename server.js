@@ -16,6 +16,14 @@ app.get('/', function(request, response){
   response.render('index.html');
 });
 
+app.get('/login', function(request, response){
+  response.render('login.html');
+});
+
+app.get('/signup', function(request, response){
+  response.render('signup.html');
+});
+
 app.get('/profile', function(request, response){
   response.render('profile.html', {
     name: 'Charlito Piao',
@@ -28,6 +36,7 @@ app.get('/profile', function(request, response){
     logged: true
   });
 });
+
 
 app.listen(1234, function(){
   console.log('Now listening to port 1234');
