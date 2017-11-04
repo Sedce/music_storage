@@ -32,7 +32,6 @@ function Spotify()
 			title:title
 		};
 	}
-
 	this.addArtist = function (name, description){
 		var _artist = new artist(name,description);
 		list_of_artists[this.length] = _artist;
@@ -56,9 +55,9 @@ function Spotify()
 	//Instead of sending the index in the array of singers it sends the Artist entity instead
 	this.getArtist = function(singer){
 		//finds the singer in the array and returns the singer;
-		for (var i  = 0; i < list_of_artists.length; i++) {
-			if((list_of_artists[i].name) === singer){
-				return list_of_artists[i];
+		for (var count  = 0; count < list_of_artists.length; count++) {
+			if((list_of_artists[count].name) === singer){
+				return list_of_artists[count];
 			}
 		}
 		return -1;
@@ -68,9 +67,9 @@ function Spotify()
 	this.getAlbum = function(artists, album_name){
 		artist = this.getArtist(artists);
 
-		for (var i = 0; i <= artist.albums.length; i++) {
-			if(artist.albums[i].title === album_name){
-				return artist.albums[i];
+		for (var count = 0; count <= artist.albums.length; count++) {
+			if(artist.albums[count].title === album_name){
+				return artist.albums[count];
 			}
 		}
 		return -1;
@@ -79,16 +78,15 @@ function Spotify()
 	this.getSong = function(song_title, album_name, artists){
 		artist = this.getArtist(artists);
 
-		//Loop inside the artists's album
-		for (var i = 0; i <= artist.albums.length; i++) {
+		for (var count = 0; count <= artist.albums.length; count++) {
 
 			//Check if album we are looking for is in the singer's album
-			if(artist.albums[i] === album_name){
+			if(artist.albums[count] === album_name){
 
 				//Find the song we are looking inside the album
-				for(var j = 0; j < artist.albums[i].songs.length;j++){
-					if(artist.albums[i].songs[i].title === song_title){
-						return j; //return the song
+				for(var count_ = 0; j < artist.albums[count].songs.length;count_++){
+					if(artist.albums[count].songs[count].title === song_title){
+						return count_; //return the song
 					}
 				}
 			}
