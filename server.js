@@ -11,23 +11,35 @@ app.use(express.static('./lib'));
 app.use(express.static('./templates'));
 app.use(express.static('./main'));
 
+function requiredLoggin(request, response, next) {
+  var loggedIn = true;
+  if(loggedIn){
+    next();
+  }else{
+    response.redirect('/login');
+  }
+}
 
-app.get('/', function(request, response){
+app.get('/', function(request, response) {
   response.render('index.html');
 });
 
-app.get('/login', function(request, response){
+app.get('/login', function(request, response) {
   response.render('login.html');
 });
 
-app.get('/signup', function(request, response){
+app.get('/signup', function(request, response) {
   response.render('signup.html');
 });
 
-app.get('/profile', function(request, response){
+app.get('/profile', requiredLoggin, function(request, response) {
   response.render('profile.html');
 });
 
+//For testing
+app.get('/tests', function(request, response) {
+  response.render('tests.html');
+});
 
 app.listen(3000, function(){
   console.log('Now listening to port 3000');
