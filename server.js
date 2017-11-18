@@ -1,6 +1,7 @@
 var express = require('express');
 var consolidate = require('consolidate');
 var app = express();
+var user = require('./database');
 
 app.set('views', './templates');
 app.engine('html', consolidate.nunjucks);
