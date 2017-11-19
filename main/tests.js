@@ -20,18 +20,18 @@ describe('Spotify', function(){
         });
     });
 
-    describe('Add_Album(value,value,value)', function() {
+    describe('Add_Album(value,value)', function() {
         beforeEach(function() {
             this.spotify = new Spotify();
             this.spotify.addArtist('Lany','hahaha');
             this.spotify.addArtist('Kodaline','Very amazing band');
         });
         it('Should add an album to the artist', function() {
-            this.spotify.addAlbum('Kodaline','In a perfect world', 'Sad album');
+            this.spotify.addAlbum('Kodaline','In a perfect world');
             assert.deepEqual(this.spotify.displayAllAlbums('Kodaline'), ['In a perfect world']);
-            this.spotify.addAlbum('Kodaline','Random Album', 'Random Album');
+            this.spotify.addAlbum('Kodaline','Random Album');
             assert.deepEqual(this.spotify.displayAllAlbums('Kodaline'), ['In a perfect world','Random Album']);
-            this.spotify.addAlbum('Kodaline','New Album', 'Random Album');
+            this.spotify.addAlbum('Kodaline','New Album');
             assert.deepEqual(this.spotify.displayAllAlbums('Kodaline'), ['In a perfect world','Random Album','New Album']);
         });
     });
@@ -40,7 +40,7 @@ describe('Spotify', function(){
         beforeEach(function() {
             this.spotify = new Spotify();
             this.spotify.addArtist('Chigga','Black Indian Chinese');
-            this.spotify.addAlbum('Chigga','Album Chigga', 'Race Descipriton Album');
+            this.spotify.addAlbum('Chigga','Album Chigga');
         });
         it('Should add a song in the album', function() {
             this.spotify.addSong('Song1','Album Chigga','Chigga');

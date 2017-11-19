@@ -14,7 +14,7 @@ function Spotify() {
 	}
 
 	//Album Entity
-	var Album = function(title,desciption) {
+	var Album = function(title) {
 		this.song_count = 0;
 		song_list = [];
 		return {
@@ -36,8 +36,8 @@ function Spotify() {
 		this.length += 1;
 	};
 
-	this.addAlbum = function (singer,album_title,album_description) {
-		var newAlbum = new Album(album_title,album_description);
+	this.addAlbum = function (singer,album_title) {
+		var newAlbum = new Album(album_title);
 		newAlbum_size = this.getArtist(singer).albums.length;
 		this.getArtist(singer).albums[newAlbum_size] = newAlbum;
 		this.getArtist(singer).albums.length += 1;
@@ -97,7 +97,6 @@ function Spotify() {
 		album_array= [];
 		list_of_albums.length -= 1;
 
-		//Change complex algorithm to much simpler and understandable algorithm
 		function checkAndInclude(album, index) {
 			album_array[index] = album.title;
 		};
@@ -106,9 +105,9 @@ function Spotify() {
 
 		return album_array;
 	}
+	list_of_songs = this.getAlbum(artist,album).songs;
 
 	this.displayAllSongs = function(artist,album) {
-		list_of_songs = this.getAlbum(artist,album).songs;
 		array_of_songs = [];
 		list_of_songs.length -=1;
 

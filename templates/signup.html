@@ -11,13 +11,14 @@
         <div class="form">
             <h1>Register to Spotyfi</h1>
 
-            <input type="text" name="firstname" placeholder="Firstname" />
-            <input type="text" name="lastname" placeholder="Lastname" />
-            <input type="text" name="username" placeholder="Username" />
-            <input type="text" name="email" placeholder="E-mail" />
-            <input type="password" name="password" placeholder="Password" />
-
-            <input type="submit" name="signup_submit" value="Sign me up" />
+            <form action = "/signup" method = "post">
+                <input type="text" name="firstname" placeholder="Firstname" />
+                <input type="text" name="lastname" placeholder="Lastname" />
+                <input type="text" name="username" placeholder="Username" />
+                <input type="text" name="email" placeholder="E-mail" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="submit" name="signup_submit" value="Sign me up" />
+        </form>
         </div>
     </div>
 </body>

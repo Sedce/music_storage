@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "carlpiao",
+    "password": "carlpiao",
+    "database": "spotyfi",
+    "host": "localhost:5432",
+    "dialect": "pg"
+  },
+  "test": {
+      "username": "carlpiao",
+      "password": "carlpiao",
+      "database": "spotyfi_test",
+      "host": "localhost:5432",
+      "dialect": "pg"
+  },
+  "production": {
+    "username": "carlpiao",
+    "password": "carlpiao",
+    "database": "spotyfi",
+    "host": "localhost:5432",
+    "dialect": "pg"
+  }
+}
