@@ -1,8 +1,5 @@
-// TODO: Use Sequelize in here
 const Sequelize = require('sequelize');
-
-const connectionUrl = 'postgres://carlpiao:carlpiao@localhost:5432/spotyfi';
-const database = new Sequelize(connectionUrl);
+const database = require('./database');
 
 const _user = database.define("_user",{
 	id: {
@@ -30,6 +27,7 @@ const _user = database.define("_user",{
 	email: {
 		type: Sequelize.STRING,
 		isEmail: true,
+		unique: true,
 		allowNull: false
 	}
 },{timestamps: true});
@@ -60,6 +58,7 @@ const _admin = database.define("_admin",{
 	email: {
 		type: Sequelize.STRING,
 		isEmail: true,
+		unique: true,
 		allowNull: false
 	}
 },{timestamps: true});
@@ -112,8 +111,7 @@ const _song = database.define("_song", {
 	}
 },{timestamps: true});
 
-
-database.sync();
+// database.sync();
 
 module.exports._user = _user;
 module.exports._admin = _admin;

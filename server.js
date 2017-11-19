@@ -1,6 +1,7 @@
-var express = require('express');
 var consolidate = require('consolidate');
 var bodyparser = require('body-parser');
+var express = require('express');
+var db = require('./database');
 var app = express();
 
 var user = require('./models')._user;
