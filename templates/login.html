@@ -21,25 +21,28 @@
 	</header>
 	<div class="container">
 		<div class="login-box animated fadeInUp">
-			<div class="box-header"><h2>Log In</h2></div>
+			<div class="box-header">
+				<h2>Log In</h2></div>
 
 			<form class="" action="/login" method="post">
 				<label for="username">Username</label><br/>
-				<input type="text" id="username"><br/>
+				<input type="text" name="username" id="username"><br/>
 				<label for="password">Password</label><br/>
-				<input type="password" id="password"><br/>
+				<input type="password" name="password" id="password"><br/>
 				<button type="submit">Sign In</button><br/>
 			</form>
 
-			<a href="#"><p class="small">Forgot your password?</p></a>
+			<a href="#">
+				<p class="small">Forgot your password?</p>
+			</a>
 		</div>
 	</div>
 </body>
 
 <script>
-	$(document).ready(function () {
-    	$('#logo').addClass('animated fadeInDown');
-    	$("input:text:visible:first").focus();
+	$(document).ready(function() {
+		$('#logo').addClass('animated fadeInDown');
+		$("input:text:visible:first").focus();
 	});
 	$('#username').focus(function() {
 		$('label[for="username"]').addClass('selected');

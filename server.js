@@ -65,14 +65,18 @@ app.post('/signup', function(request, response){
 app.post('/login', function(request, response){
     const username = request.body.username;
     const password = request.body.password;
+    console.log("MAO NI: "+ username);
+    user.findOne({where: {username: username}}).then(function(u){
+        // console.log(u)
+        if(u === null){
+            console.log("Account do not exist");
+            return response.redirect('/');
+        }
 
-    user.findOne({where: {username: username, password: password}}).then(function(){
-        console.log(request.body);
-        if(user.username === username){
-            console.log("true");
-            response.redirect('/profile');
+        if(password === u.password){
+            return response.redirect('/profile');
         }else{
-            response.redirect('/');
+            return response.redirect('/');
         }
     });
 });
