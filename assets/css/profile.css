@@ -80,7 +80,8 @@ body {
     -webkit-transition: cubic-bezier(.34, .43, 0, 1.02) 0.4s;
     -moz-transition: cubic-bezier(.34, .43, 0, 1.02) 0.4s;
     transition: cubic-bezier(.34, .43, 0, 1.02) 0.4s;
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 30px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 13px 0px 10px 0px;
