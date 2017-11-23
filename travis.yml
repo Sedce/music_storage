@@ -1,0 +1,8 @@
+language: javascript
+notifications:
+  email:
+    recipients:
+      - cggulane@up.edu.ph
+      - cgpiao1@up.edu.ph
+    on_success: never # default: change
+    on_failure: always # default: always
