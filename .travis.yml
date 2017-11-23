@@ -1,4 +1,6 @@
 language: javascript
+
+script: ant -version
 notifications:
   email:
     recipients:
@@ -6,3 +8,4 @@ notifications:
       - cgpiao1@up.edu.ph
     on_success: never # default: change
     on_failure: always # default: always
+    
