@@ -1,9 +1,9 @@
 //User configurable property, influences whether stack trace is included in Assertion error message.
 //Default of false suppresses stack trace in the error message.
 //chai. config. includeStack = true; // turn on stack trace.
-const chai = require('chai');
+// const chai = require('chai');
 // var Spotyfi = require('../domain/spotyfi').Spotyfi;
-
+// console.log("test");
 chai.config.includeStack = false;
 chai.config.truncateThreshold = 0;
 var assert = chai.assert;
