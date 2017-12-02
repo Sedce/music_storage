@@ -4,6 +4,7 @@
 // const chai = require('chai');
 // var Spotyfi = require('../domain/spotyfi').Spotyfi;
 // console.log("test");
+var
 chai.config.includeStack = false;
 chai.config.truncateThreshold = 0;
 var assert = chai.assert;
