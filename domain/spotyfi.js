@@ -1,4 +1,4 @@
-function Spotify() {
+function Spotyfi() {
     //Renamed Array
     var list_of_artists = [];
     this.length = 0;
@@ -105,9 +105,9 @@ function Spotify() {
 
         return album_array;
     }
-    list_of_songs = this.getAlbum(artist, album).songs;
 
     this.displayAllSongs = function(artist, album) {
+        list_of_songs = this.getAlbum(artist, album).songs;
         array_of_songs = [];
         list_of_songs.length -= 1;
 

@@ -17,7 +17,8 @@ app.use(express.static('./assets'));
 app.use(express.static('./images'));
 app.use(express.static('./lib'));
 app.use(express.static('./templates'));
-app.use(express.static('./main'));
+app.use(express.static('./domain'));
+app.use(express.static('./test'));
 
 app.use(bodyparser.urlencoded());
 
