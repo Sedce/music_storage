@@ -27,4 +27,3 @@ Images from: pexels.com
 Made by:
   - Cedez Marie Gulane
   - Charlito Piao
-  - Mary Rose Ampoon
