@@ -7,7 +7,7 @@ How to run (for now):
 
 Description:
   A requirement for CMSC 166. A music library that lets you add a singer/artist.
-  <br>An artist can add an album and inside those album are songs of singer/artist.
+  <br>An artist can add an album and inside those album are songs of artist.
 
 What it does:
   - Add Artist/Singer
