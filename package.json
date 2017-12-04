@@ -2,7 +2,7 @@
   "name": "music_storage",
   "version": "1.0.0",
   "description": "Music storage application",
-  "main": "spotify.js",
+  "main": "spotyfi.js",
   "directories": {
     "lib": "lib"
   },
