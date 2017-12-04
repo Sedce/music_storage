@@ -20,7 +20,7 @@ app.use(express.static('./templates'));
 app.use(express.static('./domain'));
 app.use(express.static('./test'));
 
-app.use(bodyparser.urlencoded());
+app.use(bodyparser.urlencoded({ extended: true }));
 
 function requiredLoggin(request, response, next) {
     var loggedIn = true;
@@ -97,6 +97,6 @@ app.get('/tests', function(request, response) {
     response.render('tests.html');
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log('Now listening to port 3000');
 });
