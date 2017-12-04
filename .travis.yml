@@ -11,6 +11,6 @@ notifications:
 jobs:
     include: &heroku
       provider:heroku
-      app: secure-island-42594
-      api_key: a19c9220-4832-4678-908d-1c87621fb82e
+      app: music-storage123
+      api_key: c187713b-8aac-434b-b72d-5e50e0d351e3
       
