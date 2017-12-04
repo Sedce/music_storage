@@ -10,7 +10,7 @@ notifications:
     on_failure: always # default: always
 jobs:
     include: &heroku
-      provider:heroku
+      provider: heroku
       app: music-app911
       api_key: c187713b-8aac-434b-b72d-5e50e0d351e3
       
