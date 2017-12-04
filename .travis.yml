@@ -8,4 +8,9 @@ notifications:
       - cgpiao1@up.edu.ph
     on_success: never # default: change
     on_failure: always # default: always
-    
+jobs:
+    include: &heroku
+      provider:heroku
+      app: secure-island-42594
+      api_key: a19c9220-4832-4678-908d-1c87621fb82e
+      
