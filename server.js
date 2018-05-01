@@ -9,6 +9,21 @@ var admin = require('./models')._admin;
 var artist = require('./models')._artist;
 var album = require('./models')._album;
 var song = require('./models')._song;
+var Jasmine = require('jasmine');
+var jasmine = new Jasmine();
+
+jasmine.loadConfigFile('spec/support/jasmine.json');
+
+jasmine.onComplete(function(passed){
+   if(passed){
+       console.log('Success');
+   }
+    else {
+       console.error("Failed");
+   }
+});
+
+jasmine.execute();
 
 app.set('views', './templates');
 app.engine('html', consolidate.nunjucks);
@@ -92,11 +107,7 @@ app.post('/login', function(request, response) {
     });
 });
 
-//For testing
-app.get('/tests', function(request, response) {
-    response.render('tests.html');
-});
-
+//For testings
 app.listen(process.env.PORT || 3000, function() {
     console.log('Now listening to port 3000');
 });

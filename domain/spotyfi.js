@@ -1,4 +1,4 @@
-function Spotyfi() {
+function Spotyfi(){
     //Renamed Array
     var list_of_artists = [];
     this.length = 0;
@@ -34,6 +34,7 @@ function Spotyfi() {
         var newArtist = new Artist(name, description);
         list_of_artists[this.length] = newArtist;
         this.length += 1;
+
     };
 
     this.addAlbum = function(singer, album_title) {
@@ -119,3 +120,4 @@ function Spotyfi() {
         return array_of_songs;
     }
 }
+module.exports = Spotyfi;
