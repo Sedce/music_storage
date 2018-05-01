@@ -1,10 +1,10 @@
-describe("Initial Setup Artist", function() {
+describe("Initial Artist Setup", function() {
 var Spotyfi = require('../domain/Spotyfi');
 var spotyfi;
 beforeEach(function() {
   spotyfi = new Spotyfi();
 });
-it("should have the initial length of 0", function() {
+it("should not contain any Artist", function() {
   expect(spotyfi.length).toEqual(0);
 });
 });
@@ -13,7 +13,7 @@ describe("Adding Artists", function() {
   var Spotyfi = require('../domain/Spotyfi');
   var spotyfi;
   spotyfi = new Spotyfi();
-it("should have the length of 1 after adding an Artist", function() {
+it("should increase number of artists", function() {
   spotyfi.addArtist('Lany', 'Great great great');
   expect(spotyfi.length).toEqual(1);
   spotyfi.addArtist('Daft', 'Great');
@@ -21,7 +21,7 @@ it("should have the length of 1 after adding an Artist", function() {
 });
 });
 
-describe("Add Albums", function() {
+describe("Adding Albums", function() {
   var Spotyfi = require('../domain/Spotyfi');
   var spotyfi;
   spotyfi = new Spotyfi();
@@ -34,7 +34,7 @@ it("should add an album to the artist", function() {
 });
 });
 
-describe("Add Songs", function() {
+describe("Adding Songs", function() {
   var Spotyfi = require('../domain/Spotyfi');
   var spotyfi;
   beforeEach(function() {
@@ -42,7 +42,7 @@ describe("Add Songs", function() {
     spotyfi.addArtist('Chigga', 'Black Indian Chinese');
     spotyfi.addAlbum('Chigga', 'Album Chigga');
   });
-  it('should add a song in the album', function() {
+  it('should add the song in the album', function() {
       spotyfi.addSong('Song1', 'Album Chigga', 'Chigga');
       expect(spotyfi.displayAllSongs('Chigga', 'Album Chigga')).toEqual(['Song1']);
   });
